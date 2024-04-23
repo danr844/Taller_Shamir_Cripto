@@ -131,6 +131,8 @@ public class InterpolacionLagrange {
         System.out.println("Coeficientes del polinomio de interpolación de Lagrange:");
         for (int i = 0; i < coeffs.length; i++) {
             if (coeffs[i] <0){
+            //Si el coeficiente es negativo, se le suma el módulo para obtener el coeficiente en positivo. 
+            //No obstante, el coeficiente negativo no es del todo incorrecto dado que es congruente con el valor positivo por aritmetica modular
                 System.out.println("\na" + i + " = " + (coeffs[i]+MODULO));
             }
             else{
@@ -147,6 +149,8 @@ public class InterpolacionLagrange {
 
         // Mostrar el resultado de la interpolación
         if (interpolacion < 0){
+        //Si el valor es negativo, se le suma el módulo para obtener el secreto en positivo. 
+        //No obstante, el valor negativo no es del todo incorrecto dado que es congruente con el valor positivo por aritmetica modular
             System.out.println("El valor interpolado en x = " + xValue + " es: " + (interpolacion+MODULO));
         }
         else{
