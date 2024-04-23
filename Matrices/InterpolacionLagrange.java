@@ -99,11 +99,11 @@ public class InterpolacionLagrange {
         Scanner scanner = new Scanner(System.in);
 
         // Leer el módulo desde la entrada del usuario
-        System.out.print("\nIngrese el módulo: ");
+        System.out.println("\nIngrese el módulo: ");
         MODULO = scanner.nextInt();
 
         // Leer la longitud de los arreglos x y y
-        System.out.print("\nIngrese la longitud de los arreglos x y y: ");
+        System.out.println("Ingrese la longitud de los arreglos x y y: ");
         int n = scanner.nextInt();
 
         // Inicializar los arreglos x y y
@@ -111,14 +111,14 @@ public class InterpolacionLagrange {
         int[] y = new int[n];
 
         // Leer los valores del arreglo x
-        System.out.println("\nIngrese los valores de x:");
+        System.out.println("Ingrese los valores de x:");
         for (int i = 0; i < n; i++) {
             System.out.print("x[" + i + "]: ");
             x[i] = scanner.nextInt();
         }
 
         // Leer los valores del arreglo y
-        System.out.println("\nIngrese los valores de y:");
+        System.out.println("Ingrese los valores de y:");
         for (int i = 0; i < n; i++) {
             System.out.print("y[" + i + "]: ");
             y[i] = scanner.nextInt();
@@ -128,7 +128,7 @@ public class InterpolacionLagrange {
         int[] coeffs = lagrangeCoeffs(x, y);
 
         // Mostrar los coeficientes encontrados
-        System.out.println("\n\nCoeficientes del polinomio de interpolación de Lagrange:");
+        System.out.println("Coeficientes del polinomio de interpolación de Lagrange:");
         for (int i = 0; i < coeffs.length; i++) {
             if (coeffs[i] <0){
                 System.out.println("\na" + i + " = " + (coeffs[i]+MODULO));
@@ -139,7 +139,7 @@ public class InterpolacionLagrange {
         }
 
         // Leer el valor de x para la interpolación
-        System.out.print("\nIngrese el valor de x para calcular la interpolación: ");
+        System.out.println("Ingrese el valor de x para calcular la interpolación: ");
         int xValue = scanner.nextInt();
 
         // Calcular el valor interpolado en xValue usando los coeficientes
@@ -147,10 +147,10 @@ public class InterpolacionLagrange {
 
         // Mostrar el resultado de la interpolación
         if (interpolacion < 0){
-            System.out.println("\n\nEl valor interpolado en x = " + xValue + " es: " + (interpolacion+MODULO));
+            System.out.println("El valor interpolado en x = " + xValue + " es: " + (interpolacion+MODULO));
         }
         else{
-            System.out.println("\n\nEl valor interpolado en x = " + xValue + " es: " + (interpolacion));
+            System.out.println("El valor interpolado en x = " + xValue + " es: " + (interpolacion));
         }
         // Cerrar el scanner
         scanner.close();
